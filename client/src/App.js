@@ -8,7 +8,7 @@ function App() {
 
   // Load history from backend
   const loadHistory = async () => {
-    const res = await fetch("https://summaryapp-irbc.onrender.com/api/summarize/getSummarises");
+    const res = await fetch("https://summary-app-2.onrender.com/api/summarize/getSummarises");
     const data = await res.json();
     setHistory(data);
   };
@@ -18,7 +18,7 @@ function App() {
   }, [summary]);
 
   const handleSummarize = async () => {
-    const res = await fetch("https://summaryapp-irbc.onrender.com/api/summarize/createOne", {
+    const res = await fetch("https://summary-app-2.onrender.com/api/summarize/createOne", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ text })
